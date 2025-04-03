@@ -1,1 +1,1 @@
-print("Permaneces en el sistema...")
+f"Contador: {contador}"
