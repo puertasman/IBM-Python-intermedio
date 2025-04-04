@@ -1,1 +1,1 @@
-f"Contador: {contador}"
+4

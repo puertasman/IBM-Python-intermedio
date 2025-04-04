@@ -5,4 +5,4 @@ dia_con_lluvia = False
 if dia_con_lluvia :
     print("Coger el paraguas.")
 else:
-    print("No coer el paraguas.")
+    print("No cogser el paraguas.")
