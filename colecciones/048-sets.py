@@ -20,3 +20,5 @@ for elemento in mi_set:
 
 lista = [3, 2,3, 5, 2, 4, 7, 9]
 print(f"En la lista hay los elementos {", ".join(map(str, sorted(set(lista))))}")
+
+print(f"El número 4 {"sí" if 22 in mi_set else "no"} está en mi set.")
