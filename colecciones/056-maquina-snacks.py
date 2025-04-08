@@ -33,8 +33,11 @@ def comprar_snacks():
             print(f"Añadidos {cantidad_producto} de {producto.get('nombre')}, total {total}€.")
             compra = [producto.get('Id'), producto.get('nombre'), producto.get('precio'),cantidad_producto, total]
             ticket.append(compra)
-        if input("¿Quieres seguir comprando? (S/N)").lower() == ('n' or 'no'):
+        salir = input("¿Quieres seguir comprando? (S/N)").lower()
+        if salir in ['n', 'no']:
             break
+        else:
+            print("Continuemos con la compra")
 
 def mostrar_ticket():
     print("\nMosrtar ticket")
