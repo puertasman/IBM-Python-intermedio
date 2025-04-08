@@ -7,9 +7,13 @@ snacks = [
     {'Id': 4, 'nombre': 'Refrescos', 'precio': 2.49}
 ]
 
+ticket = []
+
 def producto_por_Id(id):
     for producto in snacks:
-        if
+        if producto.get('Id') == id:
+            return producto
+    return None
 
 def mostrar_snacks():
     print("\nSnacks disponibles")
@@ -19,14 +23,30 @@ def mostrar_snacks():
 
 def comprar_snacks():
     print("\nComprar snacks")
-    mostrar_snacks()
-    producto_id = int(input("¿Qué producto quieres comprar? "))
-    cantidad_producto = int(input("¿Cuántos quieres? "))
-    producto_por_id = producto_por_Id(producto_id)
-    print("Añadidos {cantidad_productos} de {prodc}")
+    while True:
+        mostrar_snacks()
+        producto_id = int(input("¿Qué producto quieres comprar? "))
+        producto = producto_por_Id(producto_id)
+        if producto:
+            cantidad_producto = int(input("¿Cuántos quieres? "))
+            total = cantidad_producto * producto.get('precio')
+            print(f"Añadidos {cantidad_producto} de {producto.get('nombre')}, total {total}€.")
+            compra = [producto.get('Id'), producto.get('nombre'), producto.get('precio'),cantidad_producto, total]
+            ticket.append(compra)
+        if input("¿Quieres seguir comprando? (S/N)").lower() == ('n' or 'no'):
+            break
 
 def mostrar_ticket():
     print("\nMosrtar ticket")
+    if len(ticket)>0:
+        print("-----Ticket de compra-----")
+        total = 0
+        for i, compra in enumerate(ticket, start = 1):
+            print(f"{i} - {compra[1]} - precio: {compra[2]} - cantidad: {compra[3]} - total: {compra[4]}€")
+            total += compra[4]
+        print(f"\n\tPrecio total {total}€")
+    else:
+        print("No hay nada en la cesta")
 
 while True:
     if __name__ == "__main__":

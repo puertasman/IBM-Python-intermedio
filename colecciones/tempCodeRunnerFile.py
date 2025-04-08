@@ -1,1 +1,1 @@
-precio
+{compra[4]}
