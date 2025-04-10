@@ -5,6 +5,7 @@ class Empleado:
 
     def __init__(self, nombre, departamento):
         Empleado.contador_empleados += 1
+        self.Id = Empleado.contador_empleados
         self.nombre = nombre
         self.departamento = departamento
 
@@ -28,6 +29,13 @@ class Empresa:
             if empleado.departamento == departamento:
                 numero_empleados_departamento += 1
         return numero_empleados_departamento
+    
+    def mostrar_todos_los_empleados(self):
+        print(f"\nTotal empleados de la empresa: {self.nombre}")
+        for empleado in self.empleados:
+            print(f'''Empleado {empleado.Id}:
+    Nombre: {empleado.nombre}
+    Departamento: {empleado.departamento}''')
     
     def listar_todos_empleados_por_departamento(self):
         departamentos = set(e.departamento for e in self.empleados)

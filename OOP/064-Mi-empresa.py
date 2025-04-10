@@ -19,3 +19,5 @@ print(f"El número total de empleados en la empresa {empresa1.nombre} es {Emplea
 print(f"El número total de empleados en el departamento ventas es {empresa1.obtener_numero_empleados_por_departamento('Ventas')}.")
 
 empresa1.listar_todos_empleados_por_departamento()
+
+empresa1.mostrar_todos_los_empleados()
