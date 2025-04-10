@@ -18,8 +18,8 @@ class Ordenador:
 
 if __name__ == "__main__":
     monitor = Monitor("samsung", 27)
-    raton = Raton()
-    teclado = Teclado()
+    raton = Raton("Logitech","ratón")
+    teclado = Teclado("Logi","teclado")
 
     ordenador1 = Ordenador(monitor, teclado, raton)
     print(ordenador1)
