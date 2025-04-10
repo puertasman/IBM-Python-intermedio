@@ -14,10 +14,12 @@ class Raton(Dispositivo_Entrada):
 
     def __str__(self):
         return f"Dispositivo de entrada tipo ratón con id {self.id}"
+    
 class Teclado(Dispositivo_Entrada):
     """Clase que hereda e dispositivo de entrada"""
     contador_teclado = 0
     def __init__(self):
+        """Inicialización del elemento teclado"""
         Teclado.contador_teclado += 1
         self.id = Teclado.contador_teclado
 
