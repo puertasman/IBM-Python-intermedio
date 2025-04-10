@@ -1,0 +1,4 @@
+
+
+    teclado = Teclado()
+    print(teclado)
