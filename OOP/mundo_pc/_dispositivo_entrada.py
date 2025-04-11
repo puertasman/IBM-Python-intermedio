@@ -14,7 +14,7 @@ class Raton(Dispositivo_Entrada):
         super().__init__(marca, tipo)
 
     def __str__(self):
-        return f"Dispositivo de entrada tipo {self.tipo} con id {self.id}, de marca {self.marca}"
+        return f"Ratón de entrada tipo {self.tipo} con id {self.id}, de marca {self.marca}"
     
 class Teclado(Dispositivo_Entrada):
     """Clase que hereda e dispositivo de entrada"""
@@ -26,7 +26,7 @@ class Teclado(Dispositivo_Entrada):
         super().__init__(marca, tipo)
 
     def __str__(self):
-        return f"Dispositivo de entrada tipo {self.tipo} con id {self.id}, de marca {self.marca}"
+        return f"Teclado de entrada tipo {self.tipo} con id {self.id}, de marca {self.marca}"
 
 class Monitor:
     """Clase que almacena el monitor del ordenador"""
@@ -42,11 +42,17 @@ class Monitor:
         return f"El monitor {self.id}, es de la marca {self.marca} y su tamaño es de {self.tamanio} pulgadas."
 
 if __name__ == "__main__":
-    raton = Raton('Logitech', 'ratón')
+    raton = Raton('Logitech', 'USB')
     print(raton)
 
-    teclado = Teclado('logi', 'teclado')
+    raton2 = Raton('HP','bluetooth')
+    print(raton2)
+
+    teclado = Teclado('logi', 'USB')
     print(teclado)
 
+    teclado2 = Teclado('Dell','USB')
+    print(teclado2)
+    
     monitor = Monitor('Samsung', 27)
     print(monitor)
