@@ -18,3 +18,13 @@ print(cambiado)
 buscar = cadena.find("soy") # posición 3
 print("Posición de la cadena buscar {buscar}")
 
+# multiplicar cadenas
+print("Repite la cadena"*5)
+
+# strip
+cadena_sucia = ".. . .Cadena sucia... ."
+
+cadena_limpia = cadena_sucia.rstrip('. ').replace("sucia","limpia")
+print(cadena_limpia)
+#rstrip sólo derecha
+#lstrip sólo izquierda
