@@ -1,4 +1,4 @@
-# clase de dispositivo de entrada
+"""clase de dispositivo de entrada"""
 
 class Dispositivo_Entrada:
     """Elementos de entrada"""
@@ -56,3 +56,6 @@ if __name__ == "__main__":
     
     monitor = Monitor('Samsung', 27)
     print(monitor)
+    
+    monitor2 = Monitor('Dell', 24)
+    print(monitor2)
