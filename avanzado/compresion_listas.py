@@ -10,5 +10,7 @@ for numero in range (101):
 
 print(numeros_pares)
 
+# compresión de lista: sintaxis variable = [expresion for elemento in iterable condición]
+
 pares = [n for n in range (101) if n % 2 == 0]
 print(pares)
