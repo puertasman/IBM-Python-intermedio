@@ -1,0 +1,5 @@
+1,Patatas, 1.5
+2,Refresco, 2.2
+3,Sandwich, 4.15
+4,Helado, 3.455
+5,Garrapiñadas,5.55
