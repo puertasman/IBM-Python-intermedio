@@ -11,7 +11,4 @@ class Cliente:
 
     def __str__(self):
         """ información del cliente """
-        return f"""ID: {self.id}
-Nombre: {self.nombre}
-Apellido: {self.apellido}
-Membresia: {self.membresia}"""
+        return f"""ID: {self.id}, Nombre: {self.nombre}, Apellido: {self.apellido}, Membresia: {self.membresia}"""

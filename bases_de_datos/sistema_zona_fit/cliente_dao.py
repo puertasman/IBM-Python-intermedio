@@ -6,8 +6,8 @@ from cliente import Cliente
 class ClienteDAO:
     """ Para poder modificar usuarios y listarlos """
     SELECCIONAR = 'SELECT * FROM clientes ORDER BY id'
-    INSERTAR = 'INSERT INTO clientes(nombre, apellido, miembro) VALUES (%s, %s, %s)'
-    ACTUALIZAR = 'UPDATE clientes SET nombre = %s, apellido = %s, miembro = %s WHERE ID = %s'
+    INSERTAR = 'INSERT INTO clientes(nombre, apellido, membresia) VALUES (%s, %s, %s)'
+    ACTUALIZAR = 'UPDATE clientes SET nombre = %s, apellido = %s, membresia = %s WHERE ID = %s'
     ELIMINAR = 'DELETE FROM clientes WHERE ID = %s'
 
     @classmethod
@@ -32,9 +32,70 @@ class ClienteDAO:
                 cursor.close()
                 Conexion.liberar_conexion(conexion)
 
+    @classmethod
+    def insertar(cls, cliente):
+        conexion = None
+        try:
+            conexion = Conexion.obtener_conexion()
+            cursor = conexion.cursor()
+            valores = (cliente.nombre, cliente.apellido, cliente.membresia)
+            cursor.execute(cls.INSERTAR, valores)
+            conexion.commit()
+            return cursor.rowcount
+        except Exception as e:
+            print(f"Ocurrió un error al insertar un cliente: {e}")
+        finally: # se ejecuta siempre
+            if conexion is not None:
+                cursor.close()
+                Conexion.liberar_conexion(conexion)    
+
+    @classmethod
+    def actulizar(cls, cliente):
+        conexion = None
+        try:
+            conexion = Conexion.obtener_conexion()
+            cursor = conexion.cursor()
+            valores = (cliente.nombre, cliente.apellido, cliente.membresia, cliente.id)
+            cursor.execute(cls.ACTUALIZAR, valores)
+            conexion.commit()
+            return cursor.rowcount
+        except Exception as e:
+            print(f"Ocurrió un error al actualizar un cliente: {e}")
+        finally: # se ejecuta siempre
+            if conexion is not None:
+                cursor.close()
+                Conexion.liberar_conexion(conexion)        
+    
+    @classmethod
+    def eliminar(cls,cliente):
+        conexion = None
+        try:
+            conexion = Conexion.obtener_conexion()
+            cursor = conexion.cursor()
+            valores = (cliente.id,) # , porque es tupla
+            cursor.execute(cls.ELIMINAR, valores)
+            conexion.commit()
+            return cursor.rowcount
+        except Exception as e:
+            print(f"Ocurrió un error al actualizar un cliente: {e}")
+        finally: # se ejecuta siempre
+            if conexion is not None:
+                cursor.close()
+                Conexion.liberar_conexion(conexion)
 if __name__ == "__main__":
+    # insertar cliente
+    # cliente1 = Cliente(nombre = 'Roberto',apellido = 'Fernández', membresia = 300)
+    # clientes_insertados = ClienteDAO.insertar(cliente1)
+    # print(f"Clientes insertados: {clientes_insertados}")
+    # actualizar cliente
+    # cliente2 = Cliente(poner el que toque, 'Evaristo', 'Tellez', 400)
+    # clientes_actualizados = ClienteDAO.actulizar(cliente2)
+    # print(f"Cliente actualizado: {clientes_actualizados}")
+    # cliente eliminar
+    # cliente_eliminar = Cliente(id=5)
+    # ClienteDAO.eliminar(cliente_eliminar)
+    # print(f"Cliente actualizado: {cliente_eliminar}")
     # seleccionar los clientes
     clientes = ClienteDAO.seleccionar()
-    print(clientes)
     for cliente in clientes:
         print(cliente)

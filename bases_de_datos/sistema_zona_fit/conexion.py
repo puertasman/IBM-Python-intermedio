@@ -24,7 +24,8 @@ class Conexion:
                     host = cls.HOST,
                     port = cls.DB_PORT,
                     user = cls.USERNAME,
-                    password = cls.PASSWORD
+                    password = cls.PASSWORD,
+                    database = cls.DATABASE
                 )
                 return cls.pool
             except Exception as e:
