@@ -8,7 +8,7 @@ class Conexion:
     USERNAME = 'root'
     PASSWORD = 'admin'
     DB_PORT = '3306'
-    HOST = 'localhost'
+    HOST = '192.168.1.20'
     POOLSIZE = 5
     POOL_NAME = 'zona_fit_pool'
     pool = None
