@@ -1,0 +1,16 @@
+a:active, a:visited, a{
+    color: pink;
+}
+
+a:hover{
+    color: yellow;
+}
+
+/* clases o selectores */
+p.texto-centrado{
+    text-align: center;
+}
+
+.texto-grande{
+    font-size: 2em;
+}
