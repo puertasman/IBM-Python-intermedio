@@ -1,4 +1,4 @@
-""" La calse de clientes """
+""" La clase de clientes """
 
 class Cliente:
     """ Clase para crear y consultar la información del cliente """
