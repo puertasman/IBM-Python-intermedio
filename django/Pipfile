@@ -4,14 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pylint-django = "*"
 django = "*"
+django-ckeditor = "*"
 pillow = "*"
 pylint = "*"
-pylint-celery = "*"
-django-ckeditor = "*"
+pylint-django = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.11"
+python_version = "3.13"
+
+[scripts]
+webpersonal = "python web_personal/manage.py runserver"

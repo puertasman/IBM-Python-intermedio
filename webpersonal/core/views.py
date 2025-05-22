@@ -12,10 +12,6 @@ def about(request):
     """ Página de informació personal """
     return render(request, 'core/about-me.html')
 
-def portfolio(request):
-    """ Página de portfolio """
-    return render(request, 'core/portfolio.html')
-
 def contacto(request):
     """ Página de contacto """
     return render(request, 'core/contacto.html')
